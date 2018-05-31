@@ -1,0 +1,10 @@
+package ${componentPackage};
+
+import com.rkhd.ienterprise.apps.manager.customize.component.standardcustomize.StandardCustomizeInfoComponent;
+
+/**
+ * ${entityName}功能资料页组件
+ */
+public class ${entity_U}InfoComponent extends StandardCustomizeInfoComponent {
+
+}

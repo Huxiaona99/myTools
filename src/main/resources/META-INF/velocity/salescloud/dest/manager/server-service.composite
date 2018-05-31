@@ -1,0 +1,3 @@
+<service name="CustomerAccountSettingBusinessService" promote="AppsManagerComponent/CustomerAccountSettingBusinessService">
+    <scallop:binding.rmi host="localhost" port="9600" serviceName="CustomerAccountSettingBusinessRegisterRMIService" />
+</service>

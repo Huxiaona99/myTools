@@ -1,0 +1,9 @@
+package ${salesCloudPackage}.service;
+
+import com.rkhd.ienterprise.apps.salescloud.base.service.SalesCloudService;
+
+
+public interface ${entity_U}Service extends SalesCloudService {
+
+
+}

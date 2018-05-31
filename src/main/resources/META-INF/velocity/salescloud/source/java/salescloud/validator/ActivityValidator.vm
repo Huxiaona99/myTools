@@ -1,0 +1,17 @@
+package ${salesCloudPackage}.validator;
+
+import com.rkhd.ienterprise.apps.salescloud.base.validator.BaseActivityValidator;
+import com.rkhd.ienterprise.model.EngagerRequest;
+import com.rkhd.ienterprise.model.MultiResult;
+import org.springframework.stereotype.Component;
+
+import java.util.Map;
+
+
+@Component("${entity}ActivityValidator")
+public class ${entity_U}ActivityValidator extends BaseActivityValidator {
+    @Override
+    protected void processValidate(String s, EngagerRequest engagerRequest, Map map, MultiResult multiResult) {
+
+    }
+}

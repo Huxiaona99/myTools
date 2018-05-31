@@ -1,0 +1,10 @@
+package ${componentPackage};
+
+import com.rkhd.ienterprise.apps.manager.customize.component.standardcustomize.StandardCustomizeListComponent;
+
+/**
+ * ${entityName}功能相关列表组件
+ */
+public class ${entity_U}ListComponent extends StandardCustomizeListComponent {
+
+}

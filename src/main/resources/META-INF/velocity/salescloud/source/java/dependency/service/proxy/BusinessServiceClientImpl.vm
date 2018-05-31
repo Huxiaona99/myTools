@@ -1,0 +1,16 @@
+package ${servicePackage}.proxy;
+
+import ${servicePackage}.${entity_U}BusinessService;
+import com.rkhd.ienterprise.common.sca.service.AbstractServiceProxy;
+import org.osoa.sca.annotations.Reference;
+
+public class ${entity_U}BusinessServiceClientImpl extends AbstractServiceProxy<${entity_U}BusinessService> {
+    @Reference
+    protected ${entity_U}BusinessService rmiService;
+
+    @Override
+    public ${entity_U}BusinessService getRmiService() {
+    return rmiService;
+    }
+    }
+

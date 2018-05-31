@@ -1,0 +1,41 @@
+<bean id="${entity}BusinessService" class="${servicePackage}.impl.${entity_U}BusinessServiceImpl">
+    <property name="userService" ref="UserService" />
+    <property name="dataPermissionManagerService" ref="dataPermissionManagerService"/>
+    <property name="groupFollowService" ref="GroupFollowService"/>
+    <property name="groupMemberService" ref="GroupMemberService"/>
+    <property name="objectQueryAggService" ref="objectQueryAggService"/>
+    <property name="entityFileService" ref="EntityFileService"/>
+    <property name="objectDataQueryAggService" ref="objectDataQueryAggService"/>
+    <property name="objectDataOperateAggService" ref="objectDataOperateAggService"/>
+    <property name="busiTypeQueryAggService" ref="busiTypeQueryAggService" />
+    <property name="pageLayoutQueryAggService" ref="pageLayoutQueryAggService" />
+    <property name="standardDetailBusinessService" ref="standardDetailBusinessService" />
+    <property name="ApprovalInstanceBindingPojoService" ref="approvalInstanceBindingPojoService" />
+    <property name="groupService" ref="GroupService"/>
+    <property name="approvalBusinessService" ref="approvalBusinessService"/>
+    <property name="workflowBusinessService" ref="workflowBusinessService" />
+    <property name="settingCurrencyService" ref="SettingCurrencyService"/>
+    <property name="itemQueryAggService" ref="itemQueryAggService" />
+    <property name="entityUtil" ref="entityUtil"/>
+    <property name="approvalProcessorUtil" ref="approvalProcessorUtil"/>
+    <property name="customDataProcessorUtil" ref="customDataProcessorUtil" />
+    <property name="dependencyUtil" ref="dependencyUtil" />
+    <property name="objectDataBusinessUtil" ref="objectDataBusinessUtil" />
+    <property name="dimensionProcessorUtil" ref="dimensionProcessorUtil" />
+    <property name="dimensionUtil" ref="dimensionUtil" />
+    <property name="entityProcessorUtil" ref="entityProcessorUtil"/>
+    <property name="objectDataAOBuilderUtil" ref="objectDataAOBuilderUtil"/>
+    <property name="objectRelationDataBuilderUtil" ref="objectRelationDataBuilderUtil"/>
+</bean>
+<bean id="xsy${entity_U}Header"
+      class="${componentPackage}.${entity_U}HeaderComponent"
+      parent="xsyStandardCustomizeHeader">
+</bean>
+<bean id="xsy${entity_U}Info"
+      class="${componentPackage}.${entity_U}InfoComponent"
+      parent="xsyStandardCustomizeInfo">
+</bean>
+<bean id="xsy${entity_U}Refer"
+      class="${componentPackage}.${entity_U}ListComponent"
+      parent="xsyStandardCustomizeRefer">
+</bean>

@@ -1,0 +1,5 @@
+<bean id="${entity}BusinessService" class="com.rkhd.ienterprise.common.sca.service.SCAProxyServiceFactory">
+    <property name="client" ref="scaClient"/>
+    <property name="component" value="${entity_U}BusinessServiceComponent"/>
+    <property name="className" value="${servicePackage}.${entity_U}Service"/>
+</bean>

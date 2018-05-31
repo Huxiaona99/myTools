@@ -1,0 +1,3 @@
+
+<sca:service name="CustomerAccountSettingBusinessService" type="com.rkhd.business.crm.customeraccountsetting.service" target="customerAccountSettingBusinessService"/>
+

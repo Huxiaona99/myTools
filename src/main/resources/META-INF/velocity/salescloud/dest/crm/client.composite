@@ -1,0 +1,6 @@
+<component name="CustomerAccountSettingBusinessServiceComponent">
+    <implementation.java class="com.rkhd.business.crm.customeraccountsetting.service.proxy.CustomerAccountSettingBusinessServiceClientImpl"/>
+    <reference name="rmiService">
+        <scallop:binding.rmi registryName="apps-manager-service" serviceName="CustomerAccountSettingBusinessRMIService"/>
+    </reference>
+</component>

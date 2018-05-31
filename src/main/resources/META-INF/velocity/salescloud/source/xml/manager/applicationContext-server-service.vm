@@ -1,0 +1,3 @@
+
+<sca:service name="${entity_U}BusinessService" type="${servicePackage}" target="${entity}BusinessService"/>
+

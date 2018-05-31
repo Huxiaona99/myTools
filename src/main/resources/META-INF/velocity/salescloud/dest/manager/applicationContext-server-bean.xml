@@ -1,0 +1,41 @@
+<bean id="customerAccountSettingBusinessService" class="com.rkhd.business.crm.customeraccountsetting.service.impl.CustomerAccountSettingBusinessServiceImpl">
+    <property name="userService" ref="UserService" />
+    <property name="dataPermissionManagerService" ref="dataPermissionManagerService"/>
+    <property name="groupFollowService" ref="GroupFollowService"/>
+    <property name="groupMemberService" ref="GroupMemberService"/>
+    <property name="objectQueryAggService" ref="objectQueryAggService"/>
+    <property name="entityFileService" ref="EntityFileService"/>
+    <property name="objectDataQueryAggService" ref="objectDataQueryAggService"/>
+    <property name="objectDataOperateAggService" ref="objectDataOperateAggService"/>
+    <property name="busiTypeQueryAggService" ref="busiTypeQueryAggService" />
+    <property name="pageLayoutQueryAggService" ref="pageLayoutQueryAggService" />
+    <property name="standardDetailBusinessService" ref="standardDetailBusinessService" />
+    <property name="ApprovalInstanceBindingPojoService" ref="approvalInstanceBindingPojoService" />
+    <property name="groupService" ref="GroupService"/>
+    <property name="approvalBusinessService" ref="approvalBusinessService"/>
+    <property name="workflowBusinessService" ref="workflowBusinessService" />
+    <property name="settingCurrencyService" ref="SettingCurrencyService"/>
+    <property name="itemQueryAggService" ref="itemQueryAggService" />
+    <property name="entityUtil" ref="entityUtil"/>
+    <property name="approvalProcessorUtil" ref="approvalProcessorUtil"/>
+    <property name="customDataProcessorUtil" ref="customDataProcessorUtil" />
+    <property name="dependencyUtil" ref="dependencyUtil" />
+    <property name="objectDataBusinessUtil" ref="objectDataBusinessUtil" />
+    <property name="dimensionProcessorUtil" ref="dimensionProcessorUtil" />
+    <property name="dimensionUtil" ref="dimensionUtil" />
+    <property name="entityProcessorUtil" ref="entityProcessorUtil"/>
+    <property name="objectDataAOBuilderUtil" ref="objectDataAOBuilderUtil"/>
+    <property name="objectRelationDataBuilderUtil" ref="objectRelationDataBuilderUtil"/>
+</bean>
+<bean id="xsyCustomerAccountSettingHeader"
+      class="com.rkhd.ienterprise.apps.manager.customize.component.customeraccountsetting.CustomerAccountSettingHeaderComponent"
+      parent="xsyStandardCustomizeHeader">
+</bean>
+<bean id="xsyCustomerAccountSettingInfo"
+      class="com.rkhd.ienterprise.apps.manager.customize.component.customeraccountsetting.CustomerAccountSettingInfoComponent"
+      parent="xsyStandardCustomizeInfo">
+</bean>
+<bean id="xsyCustomerAccountSettingRefer"
+      class="com.rkhd.ienterprise.apps.manager.customize.component.customeraccountsetting.CustomerAccountSettingListComponent"
+      parent="xsyStandardCustomizeRefer">
+</bean>

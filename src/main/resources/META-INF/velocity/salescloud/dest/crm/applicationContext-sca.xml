@@ -1,0 +1,5 @@
+<bean id="customerAccountSettingBusinessService" class="com.rkhd.ienterprise.common.sca.service.SCAProxyServiceFactory">
+    <property name="client" ref="scaClient"/>
+    <property name="component" value="CustomerAccountSettingBusinessServiceComponent"/>
+    <property name="className" value="com.rkhd.business.crm.customeraccountsetting.service.CustomerAccountSettingService"/>
+</bean>

@@ -1,0 +1,3 @@
+<service name="${entity_U}BusinessService" promote="AppsManagerComponent/${entity_U}BusinessService">
+    <scallop:binding.rmi host="localhost" port="9600" serviceName="${entity_U}BusinessRegisterRMIService" />
+</service>

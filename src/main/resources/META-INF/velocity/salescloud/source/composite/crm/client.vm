@@ -1,0 +1,6 @@
+<component name="${entity_U}BusinessServiceComponent">
+    <implementation.java class="${servicePackage}.proxy.${entity_U}BusinessServiceClientImpl"/>
+    <reference name="rmiService">
+        <scallop:binding.rmi registryName="apps-manager-service" serviceName="${entity_U}BusinessRMIService"/>
+    </reference>
+</component>

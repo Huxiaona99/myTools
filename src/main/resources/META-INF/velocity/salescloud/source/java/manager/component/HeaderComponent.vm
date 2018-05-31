@@ -1,0 +1,10 @@
+package ${componentPackage};
+
+import com.rkhd.ienterprise.apps.manager.customize.component.standardcustomize.StandardCustomizeHeaderComponent;
+
+/**
+ * ${entityName}功能头部组件
+ */
+public class ${entity_U}HeaderComponent extends StandardCustomizeHeaderComponent {
+
+}

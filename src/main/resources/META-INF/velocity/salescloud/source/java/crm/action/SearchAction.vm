@@ -1,0 +1,42 @@
+package ${crmActionPackage};
+
+import com.rkhd.ienterprise.apps.ingage.crm.customize.action.CustomizeSearchAction;
+import com.rkhd.ienterprise.apps.manager.constant.ObjectConstants;
+import com.rkhd.ienterprise.permission.annotation.Model;
+import com.rkhd.ienterprise.permission.annotation.Permissions;
+import com.rkhd.ienterprise.permission.standardization.StandardCutomize;
+import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.Namespace;
+import org.apache.struts2.convention.annotation.Result;
+
+/**
+ * ${entityName}检索操作
+ */
+@Namespace("/json/${crm_url}")
+public class ${entity_U}ListSearchAction extends CustomizeSearchAction implements StandardCutomize {
+
+    /**
+     * ${entityName}检索
+     * @return
+     *
+     * @apiStart
+     *     @apiStatus:1
+     *     @apiUrl: /json/${crm_url}/search.action
+     *     @businessLine:SFA
+     *     @module:${entityName}
+     * @apiEnd
+     *
+     */
+    @Permissions(models = {@Model(name = ObjectConstants.OBJECT_ID_CUSTOMER_ACCOUNT_SETTING_STRING, operation = "list")})
+    @Action(value = "search", results = {@Result(name = SUCCESS, location = PAGES_ROOT + "/list.jsp")})
+    public String objectSearch() {
+        setBelongId(getStandardObjectId());
+        super.customizeList();
+        return SUCCESS;
+    }
+
+    @Override
+    public Long getStandardObjectId() {
+        return ${constant_object_id};
+    }
+}

@@ -1,0 +1,142 @@
+package ${salesCloudPackage}.service.impl;
+
+import com.rkhd.ienterprise.apps.salescloud.base.feign.PaasAggObjectDataFeignClient;
+import com.rkhd.ienterprise.apps.salescloud.base.service.SalesCloudServiceAdapter;
+import ${salesCloudPackage}.processor.${entity_U}CreateProcessor;
+import ${salesCloudPackage}.processor.${entity_U}DeleteProcessor;
+import ${salesCloudPackage}.processor.${entity_U}GetProcessor;
+import ${salesCloudPackage}.processor.${entity_U}UpdateProcessor;
+import ${salesCloudPackage}.service.${entity_U}Service;
+import ${salesCloudPackage}.validator.${entity_U}CreateValidator;
+import ${salesCloudPackage}.validator.${entity_U}DeleteValidator;
+import ${salesCloudPackage}.validator.${entity_U}GetValidator;
+import ${salesCloudPackage}.validator.${entity_U}UpdateValidator;
+import com.rkhd.ienterprise.base.feign.paasagg.BaseObjectDataFeignClient;
+import com.rkhd.ienterprise.model.EngagerRequest;
+import com.rkhd.ienterprise.model.MultiResult;
+import com.rkhd.ienterprise.model.xobject.ObjectDataAO;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Map;
+
+
+@Service("${entity}Service")
+public class ${entity_U}ServiceImpl extends SalesCloudServiceAdapter implements ${entity_U}Service {
+
+    @Autowired
+    private PaasAggObjectDataFeignClient paasAggObjectDataFeignClient;
+
+
+    @Autowired(required = false)
+    private ${entity_U}CreateProcessor}    createProcessor ;
+
+    @Autowired(required = false)
+    private ${entity_U}UpdateProcessor    updateProcessor ;
+
+    @Autowired(required = false)
+    private ${entity_U}DeleteProcessor    deleteProcessor ;
+
+    @Autowired(required = false)
+    private ${entity_U}GetProcessor       getProcessor ;
+
+    @Autowired(required = false)
+    private ${entity_U}CreateValidator    createValidator ;
+
+    @Autowired(required = false)
+    private ${entity_U}UpdateValidator updateValidator;
+
+    @Autowired(required = false)
+    private ${entity_U}DeleteValidator  deleteValidator ;
+
+    @Autowired(required = false)
+    private ${entity_U}GetValidator   getValidator ;
+
+    @Override
+    public BaseObjectDataFeignClient getPassAggObjectDataFeignClient() {
+    return this.paasAggObjectDataFeignClient;
+    }
+
+
+    @Override
+    protected void createBefore(String s, List<ObjectDataAO> list, EngagerRequest engagerRequest, Map map, MultiResult multiResult) {
+        super.createBefore(s, list, engagerRequest, map, multiResult);
+
+        if (createValidator != null) {
+            this.createValidator.validate(s, list, engagerRequest, map, multiResult);
+        }
+
+        if (createProcessor != null) {
+            this.createProcessor.processBefore(s, list, engagerRequest, map, multiResult);
+        }
+    }
+
+    @Override
+    protected void createAfter(MultiResult multiResult, Map map) {
+        super.createAfter(multiResult, map);
+        if (createProcessor != null) {
+            this.createProcessor.processAfter(multiResult, map);
+        }
+    }
+
+    @Override
+    protected void updateAfter(MultiResult multiResult, Map map) {
+        super.updateAfter(multiResult, map);
+        if (this.updateProcessor != null) {
+            this.updateProcessor.processAfter(multiResult,map);
+        }
+    }
+
+    @Override
+    protected void updateBefore(String s, List<ObjectDataAO> list, EngagerRequest engagerRequest, Map map , MultiResult multiResult) {
+
+        super.updateBefore(s, list, engagerRequest, map, multiResult);
+        if (updateValidator != null) {
+            this.updateValidator.validate(s, list, engagerRequest, map, multiResult);
+        }
+        if (this.updateProcessor != null) {
+            this.updateProcessor.processBefore(s,list,engagerRequest,map, multiResult);
+        }
+
+    }
+
+    @Override
+    protected void deleteBefore(String s, List<Long> list, EngagerRequest engagerRequest, Map map , MultiResult multiResult) {
+        super.deleteBefore(s, list, engagerRequest, map, multiResult);
+        if (this.deleteValidator != null) {
+            this.deleteValidator.validate(s, list, engagerRequest, map, multiResult);
+        }
+        if (this.deleteProcessor != null) {
+            this.deleteProcessor.processBefore(s, list, engagerRequest, map, multiResult);
+        }
+    }
+
+    @Override
+    protected void deleteAfter(MultiResult multiResult, Map map ) {
+        super.deleteAfter(multiResult, map);
+        if (this.deleteProcessor != null) {
+            this.deleteProcessor.processAfter(multiResult, map);
+        }
+
+    }
+
+    @Override
+    protected void getBefore(String s, List<Long> list, EngagerRequest engagerRequest, Map map , MultiResult multiResult) {
+        super.getBefore(s, list, engagerRequest, map, multiResult);
+        if (this.getValidator != null) {
+            this.getValidator.validate(s,list,engagerRequest,map, multiResult);
+        }
+        if (this.getProcessor != null) {
+            this.getProcessor.processBefore(s, list, engagerRequest, map, multiResult);
+        }
+    }
+
+    @Override
+    protected void getAfter(MultiResult multiResult, Map map) {
+        super.getAfter(multiResult, map);
+        if (this.getProcessor != null) {
+            this.getProcessor.processAfter(multiResult, map);
+        }
+    }
+}
