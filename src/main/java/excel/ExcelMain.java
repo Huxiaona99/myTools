@@ -10,6 +10,7 @@ import java.util.List;
  */
 public class ExcelMain {
     public static void main(String[] args){
+        //String excelUrl = "E:\\workspace\\InitSalesCloud\\src\\main\\resources\\test1.xls";
         String excelUrl = "E:\\workspace\\InitSalesCloud\\src\\main\\resources\\销售云_v1807_账户_移动端&Web端_胡晓娜_20180530.xls";
         try {
             List<List<Object>> list = ExcelUtils.getBankListByExcel(excelUrl);
@@ -27,6 +28,10 @@ public class ExcelMain {
         for(List<Object> children : list){
             buffer.append("((select @id := @id + 1 as id), '-101',NULL, '2', '5' ,'"+children.get(0)+"', 'zh', '"+children.get(4)+"', '"+children.get(4)+"',1, 0, NULL, '', unix_timestamp(now())*1000, -101, unix_timestamp(now())*1000, -101),\n");
             buffer.append("((select @id := @id + 1 as id), '-101',NULL, '2', '5' ,'"+children.get(0)+"', 'zh-TW', '"+converter.convert(String.valueOf(children.get(4)))+"', '"+converter.convert(String.valueOf(children.get(4)))+"',1, 0, NULL, '', unix_timestamp(now())*1000, -101, unix_timestamp(now())*1000, -101),\n");
+            if(children.size()<8){
+                continue;
+            }
+            buffer.append("((select @id := @id + 1 as id), '-101',NULL, '2', '5' ,'"+children.get(0)+"', 'en', '"+children.get(7)+"', '"+children.get(7)+"',1, 0, NULL, '', unix_timestamp(now())*1000, -101, unix_timestamp(now())*1000, -101),\n");
         }
         return buffer.toString();
     }
